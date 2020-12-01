@@ -20,10 +20,6 @@ with open('input.txt') as file:
             for z in entries:
                 add(x, y, z)
 
-                # print(f"{e} plus {y} equals 2020")
-                # result = e * y
-                # print(f"{e} multiplied by {y} equals {result}")
-                # break
 
 
 

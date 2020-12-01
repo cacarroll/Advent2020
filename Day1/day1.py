@@ -1,12 +1,29 @@
+def add(x, y, z=0):
+    if x + y + z == 2020:
+        print(f"{x} plus {y} plus {z} equals 2020")
+        multiply(x, y, z)
+
+
+def multiply(x, y, z):
+    if z == 0:
+        result = x * y
+    else:
+        result =  x * y * z
+    print(result)
+
+
 with open('input.txt') as file:
     entries = [int(line.rstrip()) for line in file]
-    for e in entries:
+    for x in entries:
         for y in entries:
-            if e + y == 2020:
-                print(f"{e} plus {y} equals 2020")
-                result = e * y
-                print(f"{e} multiplied by {y} equals {result}")
-                break
+            add(x, y)
+            for z in entries:
+                add(x, y, z)
+
+                # print(f"{e} plus {y} equals 2020")
+                # result = e * y
+                # print(f"{e} multiplied by {y} equals {result}")
+                # break
 
 
 

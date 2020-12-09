@@ -44,6 +44,7 @@ with open('Day5\\input.txt') as file:
         seats.append(seat)
 #print(sorted(seats))
 
+#Challenge Two
 for seat in seats:
     if seat+1 not in seats and seat+2 in seats:
         myseat = seat+1

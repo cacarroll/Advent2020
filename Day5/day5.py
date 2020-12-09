@@ -11,6 +11,10 @@ def getNewRange(letter, lowerRange, upperRange):
         newRange = middle, upperRange
         return newRange
     
+def find_missing(lst): 
+    return [x for x in range(lst[0], lst[-1]+1) if x not in lst]
+
+
 seats = []
 with open('Day5\\input.txt') as file:
     lines = [str(line.rstrip()) for line in file]
@@ -37,12 +41,15 @@ with open('Day5\\input.txt') as file:
                 column = lowerRange
             count +=1
         seat = (row * 8 + column)
-        #print(seat)
         seats.append(seat)
-print(max(seats))
+#print(sorted(seats))
 
+for seat in seats:
+    if seat+1 not in seats and seat+2 in seats:
+        myseat = seat+1
 
-# print (getNewRange('F', 0, 127))
+print(myseat)
+
 assert getNewRange('F', 0, 127) == (0, 63)
 assert getNewRange('B', 0, 63) == (32, 63)
 assert getNewRange('F', 32, 63) == (32, 47)

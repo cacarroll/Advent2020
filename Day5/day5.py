@@ -37,8 +37,10 @@ with open('Day5\\input.txt') as file:
                 column = lowerRange
             count +=1
         seat = (row * 8 + column)
-seats.append(seat)
+        #print(seat)
+        seats.append(seat)
 print(max(seats))
+
 
 # print (getNewRange('F', 0, 127))
 assert getNewRange('F', 0, 127) == (0, 63)

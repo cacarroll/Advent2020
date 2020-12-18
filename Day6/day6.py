@@ -26,6 +26,36 @@ for line in cd:
         sum += sum_unique(response)
         response = ''
 
+
 sum += sum_unique(response)
 print(sum)
 
+
+# part 2
+def get_unique_answer_all(responses):
+    questions = []
+    inAllLines = True
+
+    for char in responses[0]:
+        inAllLines = True
+        for line in responses:
+            if char not in line:
+                inAllLines = False
+
+        if inAllLines and char not in questions:
+            questions.append(char)
+    
+    return len(questions)
+
+
+sum = 0
+currentResponse = []
+for line in cd:
+    if line != '':
+        currentResponse.append(line)
+    else:
+        sum += get_unique_answer_all(currentResponse)
+        currentResponse = []
+
+sum += get_unique_answer_all(currentResponse)
+print(sum)
